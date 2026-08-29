@@ -42,7 +42,7 @@ All parameters live as keyable attributes on `uvDistort#_CTRL`.
 | `distortAmountU` | UV offset strength in U, in UV units; unbounded, 0 disables, negative inverts |
 | `distortAmountV` | UV offset strength in V, in UV units; unbounded |
 | `curveScale` | Noise frequency; lower values give broader, lazier curves |
-| `detail` | Noise octaves; 1–2 stays smooth, higher adds finer wobble |
+| `detail` | Noise octaves; 0 is the simplest field, 1–2 stays smooth, higher adds finer wobble |
 | `flow` | Slides both noise fields through time; animate for drift |
 | `curveStyle` | Noise character: Smooth (Perlin), Billow, Wave, Wispy, or SpaceTime |
 

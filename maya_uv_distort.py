@@ -148,7 +148,7 @@ def build_distortion(texture):
                AMOUNT_DEFAULT)
     _add_float(controller, "curveScale", "Curve Scale",
                CURVE_SCALE_DEFAULT, minimum=0.0)
-    _add_float(controller, "detail", "Detail", DETAIL_DEFAULT, minimum=1.0)
+    _add_float(controller, "detail", "Detail", DETAIL_DEFAULT, minimum=0.0)
     _add_float(controller, "flow", "Flow", FLOW_DEFAULT)
     cmds.addAttr(
         controller, longName="curveStyle", niceName="Curve Style",
@@ -313,7 +313,7 @@ def show_window():
         slider("Amount V", "distortAmountV", -0.2, 0.2, 10000.0,
                field_min=-10000.0)
         slider("Curve Scale", "curveScale", 0.0, 12.0, 100.0)
-        slider("Detail", "detail", 1.0, 8.0, 8.0)
+        slider("Detail", "detail", 0.0, 8.0, 8.0)
         slider("Flow", "flow", -10.0, 10.0, 10000.0, field_min=-10000.0)
 
         def assign_style(_):

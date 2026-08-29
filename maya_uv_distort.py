@@ -179,6 +179,11 @@ def build_distortion(texture):
     for noise in (noise_u, noise_v):
         _tag(controller, noise)
         cmds.setAttr(noise + ".amplitude", 1.0)
+        # The noises must be told which UV they are being sampled at: an
+        # unconnected uvCoord does not inherit the projection's UV context
+        # and evaluates as a constant, which turns the warp into a uniform
+        # offset and makes frequency changes invisible.
+        cmds.connectAttr(base_plug, noise + ".uvCoord")
         cmds.connectAttr(controller + ".curveScale", noise + ".frequency")
         cmds.connectAttr(controller + ".detail", noise + ".depthMax")
         cmds.connectAttr(controller + ".curveStyle", noise + ".noiseType")

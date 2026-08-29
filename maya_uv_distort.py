@@ -143,9 +143,9 @@ def build_distortion(texture):
         cmds.shadingNode("plusMinusAverage", asUtility=True), controller
     )
     _add_float(controller, "distortAmountU", "Distort Amount U",
-               AMOUNT_DEFAULT, minimum=0.0)
+               AMOUNT_DEFAULT)
     _add_float(controller, "distortAmountV", "Distort Amount V",
-               AMOUNT_DEFAULT, minimum=0.0)
+               AMOUNT_DEFAULT)
     _add_float(controller, "curveScale", "Curve Scale",
                CURVE_SCALE_DEFAULT, minimum=0.0)
     _add_float(controller, "detail", "Detail", DETAIL_DEFAULT, minimum=1.0)
@@ -308,8 +308,10 @@ def show_window():
                 columnWidth3=(90, 60, 200), adjustableColumn=3,
             )
 
-        slider("Amount U", "distortAmountU", 0.0, 0.2, 10.0)
-        slider("Amount V", "distortAmountV", 0.0, 0.2, 10.0)
+        slider("Amount U", "distortAmountU", -0.2, 0.2, 10000.0,
+               field_min=-10000.0)
+        slider("Amount V", "distortAmountV", -0.2, 0.2, 10000.0,
+               field_min=-10000.0)
         slider("Curve Scale", "curveScale", 0.0, 12.0, 100.0)
         slider("Detail", "detail", 1.0, 8.0, 8.0)
         slider("Flow", "flow", -10.0, 10.0, 10000.0, field_min=-10000.0)

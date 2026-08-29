@@ -39,8 +39,8 @@ All parameters live as keyable attributes on `uvDistort#_CTRL`.
 
 | Attribute | Purpose |
 | --- | --- |
-| `distortAmountU` | UV offset strength in U, in UV units (0 disables) |
-| `distortAmountV` | UV offset strength in V, in UV units |
+| `distortAmountU` | UV offset strength in U, in UV units; unbounded, 0 disables, negative inverts |
+| `distortAmountV` | UV offset strength in V, in UV units; unbounded |
 | `curveScale` | Noise frequency; lower values give broader, lazier curves |
 | `detail` | Noise octaves; 1–2 stays smooth, higher adds finer wobble |
 | `flow` | Slides both noise fields through time; animate for drift |
